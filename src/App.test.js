@@ -27,10 +27,16 @@ test("renders without error", () => {
   expect(appComponent.length).toBe(1);
 });
 
-test("renders button", () => {
+test("renders increment button", () => {
   const wrapper = setup();
   const button = findByTestAttr(wrapper, "increment-counter");
   expect(button.length).toBe(1);
+});
+
+test("renders decrement button", () => {
+  const wrapper = setup();
+  const button = findByTestAttr(wrapper, "decrement-counter");
+  expect(button).toBe(1);
 });
 
 test("renders counter display", () => {

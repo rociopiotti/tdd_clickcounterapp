@@ -5,15 +5,16 @@ function App() {
   const [count, setcount] = useState(0);
 
   return (
-    <div data-test='component-app'>
+    <div data-test='component-app' className="App">
       &nbsp;
       <h1 data-test='conunter-display'>
-        The counter is currently
+        The counter is currently&nbsp;
         <span data-test='count'>{count}</span>
       </h1>
       <button
         data-test='increment-counter'
-        onClick={() => setcount(count + 1)}></button>
+        className= "counter-button"
+        onClick={() => setcount(count + 1)}>Increment button</button>
     </div>
   );
 }
