@@ -5,14 +5,22 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 Enzyme.configure({ adapter: new Adapter() });
 
 test("renders without error", () => {
-  const wrapper = shallow(<App/>);
+  const wrapper = shallow(<App />);
   const appComponent = wrapper.find(".data-test-component-app");
   expect(appComponent.length).toBe(1);
 });
 
-test("renders button", () => {});
+test("renders button", () => {
+  const wrapper = shallow(<App />);
+  const button = wrapper.find(".data-test-increment-app");
+  expect(button.length).toBe(1);
+});
 
-test("renders counter display", () => {});
+test("renders counter display", () => {
+  const wrapper = shallow(<App />);
+  const conterDisplay = wrapper.find(".data-test-conunter-display");
+  expect(conterDisplay.length).toBe(1);
+});
 
 test("counter starts at 0", () => {});
 
