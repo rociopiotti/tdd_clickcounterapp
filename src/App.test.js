@@ -4,6 +4,8 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 
 Enzyme.configure({ adapter: new Adapter() });
 
+// const setup = () => shallow(<App />);
+
 test("renders without error", () => {
   const wrapper = shallow(<App />);
   const appComponent = wrapper.find(".data-test-component-app");
@@ -12,7 +14,7 @@ test("renders without error", () => {
 
 test("renders button", () => {
   const wrapper = shallow(<App />);
-  const button = wrapper.find(".data-test-increment-app");
+  const button = wrapper.find(".data-test-increment-counter");
   expect(button.length).toBe(1);
 });
 
