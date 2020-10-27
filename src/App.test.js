@@ -36,7 +36,7 @@ test("renders increment button", () => {
 test("renders decrement button", () => {
   const wrapper = setup();
   const button = findByTestAttr(wrapper, "decrement-counter");
-  expect(button).toBe(1);
+  expect(button.length).toBe(1);
 });
 
 test("renders counter display", () => {
