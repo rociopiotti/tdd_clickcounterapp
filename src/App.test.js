@@ -64,3 +64,12 @@ test("clicking on button increments counter display", () => {
   const count = findByTestAttr(wrapper, "count").text();
   expect(count).toBe("1");
 });
+
+test("clicking on button decrements counter display", () => {
+  const wrapper = setup();
+  const button = findByTestAttr(wrapper, "decrement-counter");
+  button.simulate("click");
+
+  const count = findByTestAttr(wrapper, "count").text();
+  expect(count).toBe("-1");
+});
