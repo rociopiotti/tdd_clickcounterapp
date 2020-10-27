@@ -5,3 +5,7 @@
 .counter-button {
   
 }
+
+.hidden{
+  visibility: hidden;
+}
