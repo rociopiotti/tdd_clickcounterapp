@@ -11,6 +11,7 @@ Enzyme.configure({ adapter: new Adapter() });
  * @returns {ShalloWrapper}
  */
 const setup = () => shallow(<App />);
+
 /**
  * Return ShallowWrapper containing node(s) with the given data-test value.
  * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
@@ -18,24 +19,24 @@ const setup = () => shallow(<App />);
  *
  */
 
-const findByClass = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
+const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
 test("renders without error", () => {
   const wrapper = setup();
-  const appComponent = findByClass(wrapper, "component-app");
+  const appComponent = findByTestAttr(wrapper, "component-app");
 
   expect(appComponent.length).toBe(1);
 });
 
 test("renders button", () => {
   const wrapper = shallow(<App />);
-  const button = findByClass(wrapper, "increment-counter");
+  const button = findByTestAttr(wrapper, "increment-counter");
   expect(button.length).toBe(1);
 });
 
 test("renders counter display", () => {
   const wrapper = shallow(<App />);
-  const conterDisplay = findByClass(wrapper, "conunter-display");
+  const conterDisplay = findByTestAttr(wrapper, "conunter-display");
   expect(conterDisplay.length).toBe(1);
 });
 
